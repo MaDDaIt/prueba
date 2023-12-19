@@ -28,6 +28,7 @@ STATICFILES_DIR = (
 INSTALLED_APPS = [
     'rest_framework',
     'tarea',
+    'corsheaders',
     'rest_framework.authtoken',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -47,6 +49,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+CORS_ALLOW_ALL_ORIGINS =True
+CORS_ALLOW_CREDENTIALS=True
+CORS_ALLOW_ORIGINS=['http://localhost:']
 ROOT_URLCONF = 'ProyectoTarea.urls'
 
 TEMPLATES = [
